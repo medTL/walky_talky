@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: coral;
+}
+.container {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+.talky {
+    height: 25em;
+    width: 15em;
+    background-color: yellow;
+    position: relative;
+    box-shadow: 15px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border:solid 3px #000;
+}
+.talky:after {
+    content: "";
+    position: absolute;
+    width: 1.5em;
+    height: 10em;
+    top: -10em;
+    right: 1%;
+    border-radius: 20px 20px 0 0 ;
+    background-color: #000;
+}
+.talky::before {
+    content: "";
+    position: absolute;
+    left: 4%;
+    border: solid 3px #000;
+    top: 1em;
+    width: 8.5em;
+    height: 5em;
+    background-image: url("holes.jpeg");
+    background-repeat: repeat;
+    background-size: 15% 15%;
+}
+
+.play-button {
+    position: absolute;
+    top:5%;
+    right: 2%;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    border:solid 4px #000;
+    background-color: red;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+}
+.play-button:active {
+ transform: translateY(4px);
+}
+
+@media only  screen and (max-width:800px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
