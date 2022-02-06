@@ -1,17 +1,13 @@
 const path = require('path');
 const express  = require('express');
 const socketIO = require('socket.io');
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const publicPatch = path.join(__dirname, '/../public');
 const port = process.env.PORT || 3000;
 var Usercounter = 0;
-var options = {
-    key: fs.readFileSync(path.resolve('server/server.key')),
-    cert: fs.readFileSync(path.resolve('server/server.cert')),
-}
 let app = express();
-let server = https.createServer(options, app);
+let server = https.createServer(app);
 let io = socketIO(server); 
 app.use(express.static(publicPatch));
 io.on("connection", function(socket) {
